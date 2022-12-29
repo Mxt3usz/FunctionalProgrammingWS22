@@ -1,7 +1,7 @@
 import Test.QuickCheck
 
 guard :: Bool -> [()]
-guard b | b = [()]
+guard b | b = return ()
         | not b = []
 
 prop_guardTrue, prop_guardFalse :: [Integer] -> [Integer] -> Bool

@@ -8,13 +8,14 @@ import Prelude ()
 
 -- | A list of columns. The integer in each column specifies at which 0-based
 -- index the queen is positioned.
-type Solution = [Integer]
+--type Solution = [Integer]
 
 -------------------------------------------------------------------------------
 -- Search algorithm
 
-nqueens :: Integer -> [Solution]
-nqueens = error "TODO"
+--nqueens :: Integer -> [Solution]
+
+
 -------------------------------------------------------------------------------
 -- Solving & printing the solution
 
@@ -34,15 +35,3 @@ solveAll n = case nqueens n of
 -- Visualizing
 
 -- | Prettyprints a solution as a grid with the specified size.
-displaySolution :: Integer -> Integer -> Solution -> String
-displaySolution rows cols solution =
-  unlines
-    . List.transpose
-    . List.genericTake cols
-    $ map displayColumn solution ++ repeat emptyColumn
-  where
-    displayColumn n =
-      List.genericTake rows $
-        List.genericReplicate n 'â‹…' ++ 'â™›' : List.genericReplicate (rows - n - 1) 'â‹…'
-    emptyColumn =
-      List.genericReplicate rows 'â‹…'

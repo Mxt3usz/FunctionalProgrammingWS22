@@ -85,7 +85,6 @@ def nqueens(n):
 
 
 
-    
 
 
 def chess_matrix2(matrix):
